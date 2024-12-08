@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<!--	<groups>
+		<run>
+			<include name="smoke" />
+		</run>
+	</groups>
+	-->
+	<groups>
+		<run>
+			<include name="windows.*" />
+		</run>
+	</groups>
+	<!--	<test thread-count="5" name="Test">
+		<groups>
+			<run>
+				<include name="smoke" /> *** this will run only smoke group in class NewTest1
+	only***
+			</run>
+		</groups>
+		<classes>
+			<class name="groupTest.NewTest1" />
+		</classes>
+	</test> 
+-->
+
+	<!-- 
+	<test thread-count="5" name="Test">
+		<groups>
+			<define name="dailyBuild"> **** group of groups ****
+				<include name="smoke" />
+				<include name="functional" />
+			</define>
+			<define name="weeklyBuild">
+				<include name="smoke" />
+				<include name="functional" />
+				<include name="sanity" />
+				<include name="regression" />
+			</define>
+			<run>
+				**** this will run both smoke and regression group in class
+				NewTest1 and NewTest2 ****
+				<include name="smoke" />
+				<exclude name="sanity" /> **** This will run only those test
+				methods which is not sanity group even though it including
+				regression and smoke group ****
+				<include name="regression" />
+			</run>
+		</groups>
+		<classes>
+			<class name="groupTest.NewTest1" />
+			<class name="groupTest.NewTest2" />
+		</classes>
+	</test>
+ -->
+
+	<test thread-count="5" name="Test1">
+		<groups>
+			<define name="dailyBuild"> <!-- group of groups -->
+				<include name="smoke" />
+				<include name="functional" />
+			</define>
+			<define name="weeklyBuild">
+				<include name="smoke" />
+				<include name="functional" />
+				<include name="sanity" />
+				<include name="regression" />
+			</define>
+			<run>
+				<!-- this will run both smoke and regression group in class
+				NewTest1 and NewTest2 -->
+				<include name="all" />
+			</run>
+		</groups>
+		<classes>
+			<class name="groupTest.NewTest1" />
+			<class name="groupTest.NewTest3" />
+		</classes>
+	</test>
+
+	<test thread-count="5" name="Test2">
+		<groups>
+			<define name="dailyBuild"> <!-- group of groups -->
+				<include name="smoke" />
+				<include name="functional" />
+			</define>
+			<define name="weeklyBuild">
+				<include name="smoke" />
+				<include name="functional" />
+				<include name="sanity" />
+				<include name="regression" />
+			</define>
+			<run>
+				<!-- this will run both smoke and regression group in class
+				NewTest1 and NewTest2 -->
+				<include name="weeklyBuild" />
+			</run>
+		</groups>
+		<classes>
+			<class name="groupTest.NewTest1" />
+			<class name="groupTest.NewTest2" />
+		</classes>
+	</test>
+</suite>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="tests" thread-count="2">
+	<!-- Test1 take 20 no. thread and perform operation
+	Test2 take 21 no. thread and perform operation
+	these two tests run parallely
+	after that as Test2 finish first because it has three methods only
+	then Test3 take position of Test2 
+	and use same thread no. i.e. 21 and run parallely with Test1
+	-->
+	<test name="Test1">
+		<classes>
+			<class name="parallelExecution.TestClass1" />
+		</classes>
+	</test>
+
+	<test name="Test2">
+		<classes>
+			<class name="parallelExecution.TestClass2" />
+		</classes>
+	</test>
+
+	<test name="Test3">
+		<classes>
+			<class name="parallelExecution.TestClass3" />
+		</classes>
+	</test>
+</suite> <!--
+Suite -->

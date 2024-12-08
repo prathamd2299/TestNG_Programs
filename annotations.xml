@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+<!--	<parameter name="browserName" value="Chrome" /> -->
+	<parameter name="url" value="https://www.facebook.com/" />
+	<parameter name="sleepTime" value="3000"/>
+	<test thread-count="5" name="Test">
+		<parameter name="browserName" value="Edge" />
+		<classes>
+			<class name="com.google.www.Annotations">
+				<methods>
+					<include name="testMethod1" />
+					<include name="testMethod2" />
+					<include name="testFacebook" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!--
+	Test -->
+	<test thread-count="5" name="TestGoogle">
+	<!--	<parameter name="browserName" value="Chrome" />  -->
+		<classes>
+			<class name="com.google.www.FirstTest" />
+		</classes>
+	</test>
+</suite> <!--
+Suite -->
